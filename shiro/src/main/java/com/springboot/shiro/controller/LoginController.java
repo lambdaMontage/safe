@@ -50,6 +50,7 @@ public class LoginController {
      *
      * @return
      */
+    @PostMapping("/logout")
     public JSONObject logOut() {
         return loginService.logOut();
     }

@@ -17,7 +17,7 @@ import java.util.Set;
  */
 
 @Service
-@Transactional
+@Transactional(rollbackFor = Exception.class)
 public class PermissionServiceImpl implements PermissionService {
 
     private Logger logger = LoggerFactory.getLogger(PermissionServiceImpl.class);

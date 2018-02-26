@@ -12,17 +12,18 @@ import org.springframework.boot.web.support.SpringBootServletInitializer;
  */
 
 @SpringBootApplication
-@MapperScan("com.springboot.com.springboot.shiro.shiro.dao")
-public class MyApplication extends SpringBootServletInitializer{
+@MapperScan("com.springboot.shiro.dao")
+public class MyApplication extends SpringBootServletInitializer {
 
     public static void main(String[] args) {
-        SpringApplication springApplication = new SpringApplication(MyApplication.class);
-        springApplication.setBannerMode(Banner.Mode.OFF);
-        springApplication.run(args);
+        SpringApplication application = new SpringApplication(MyApplication.class);
+        application.setBannerMode(Banner.Mode.OFF);
+        application.run(args);
     }
 
     @Override
-    protected SpringApplicationBuilder configure(SpringApplicationBuilder springApplicationBuilder){
-        return  springApplicationBuilder.sources(MyApplication.class);
+    protected SpringApplicationBuilder configure(SpringApplicationBuilder builder) {
+        // 注意这里要指向原先用main方法执行的Application启动类
+        return builder.sources(MyApplication.class);
     }
 }

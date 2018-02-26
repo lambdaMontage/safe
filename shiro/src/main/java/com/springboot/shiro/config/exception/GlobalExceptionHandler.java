@@ -27,6 +27,7 @@ public class GlobalExceptionHandler {
 
     private Logger logger = LoggerFactory.getLogger("GlobalExceptionHandler");
 
+    @ExceptionHandler(value = Exception.class)
     public JSONObject defaultErrorHandler(HttpServletRequest resq, Exception exception) throws Exception {
         String errorPosition = "";
         //如果错误堆栈信息存在
@@ -36,8 +37,6 @@ public class GlobalExceptionHandler {
             int lineNumber = stackTraceElement.getLineNumber();
             errorPosition = fileName + ":" + lineNumber;
         }
-
-
         JSONObject jsonObject = new JSONObject();
         jsonObject.put("returnCode", ErrorEnum.E_400.getErrorCode());
         jsonObject.put("returnMsg", ErrorEnum.E_400.getErrorMsg());

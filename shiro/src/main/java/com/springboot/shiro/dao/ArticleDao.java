@@ -16,7 +16,7 @@ public interface ArticleDao {
      * @param jsonObject
      * @return
      */
-    int addArticleDao(JSONObject jsonObject);
+    int addArticle(JSONObject jsonObject);
 
     /**
      * 统计文章数量

@@ -28,7 +28,7 @@ public class ArticleServiceImpl implements ArticleService {
 
     @Override
     public JSONObject addArticle(JSONObject jsonObject) {
-        articleDao.addArticleDao(jsonObject);
+        articleDao.addArticle(jsonObject);
         return CommonUtil.successJson();
     }
 

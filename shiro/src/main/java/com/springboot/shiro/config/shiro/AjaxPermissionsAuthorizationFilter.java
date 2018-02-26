@@ -18,7 +18,8 @@ import java.io.PrintWriter;
  */
 public class AjaxPermissionsAuthorizationFilter extends FormAuthenticationFilter {
 
-    protected boolean onAcessDenied(ServletRequest request, ServletResponse response) throws Exception {
+    @Override
+    protected boolean onAccessDenied(ServletRequest request, ServletResponse response) throws Exception {
         JSONObject jsonObject = new JSONObject();
         jsonObject.put("returnCode", ErrorEnum.E_20011.getErrorCode());
         jsonObject.put("returnMsg", ErrorEnum.E_20011.getErrorMsg());
@@ -30,9 +31,8 @@ public class AjaxPermissionsAuthorizationFilter extends FormAuthenticationFilter
             out = response.getWriter();
             out.println(jsonObject);
         } catch (Exception e) {
-
         } finally {
-            if (out != null) {
+            if (null != out) {
                 out.flush();
                 out.close();
             }
