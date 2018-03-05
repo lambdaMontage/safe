@@ -1,6 +1,6 @@
 # vue
 
-> springbootVue
+> A Vue.js project
 
 ## Build Setup
 

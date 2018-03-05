@@ -1,8 +1,8 @@
 {
   "name": "vue",
   "version": "1.0.0",
-  "description": "springbootVue",
-  "author": "chensh <chensh@udcredit.com>",
+  "description": "A Vue.js project",
+  "author": "shihao <1010465466@qq.com>",
   "private": true,
   "scripts": {
     "dev": "webpack-dev-server --inline --progress --config build/webpack.dev.conf.js",
